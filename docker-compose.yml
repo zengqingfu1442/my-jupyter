@@ -1,0 +1,16 @@
+version: "3"
+services:
+    nb:
+        image: dzeng/datascience-notebook:1.0
+        entrypoint: bash start.sh
+        tty: true
+        ports:
+            - 50050:8888
+        volumes:
+            - /home/zengxiaofuqi/jupyter:/zeng
+        networks:
+            - nb
+
+networks:
+    nb:
+        driver: bridge
